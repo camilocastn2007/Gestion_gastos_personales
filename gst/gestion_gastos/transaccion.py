@@ -6,11 +6,11 @@ class Transaccion:
             raise ValueError("El monto debe ser mayor a cero")
         if tipo not in ["Ingreso", "Egreso"]:
             raise ValueError("El tipo de transacción debe ser 'Ingreso' o 'Egreso'")
-        
+
         self.__monto = monto
         self.__categoria = categoria
         self.__tipo = tipo
-        self.__fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  
+        self.__fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     def get_monto(self) -> float:
         return self.__monto if self.__tipo == "Ingreso" else -self.__monto

@@ -1,4 +1,4 @@
-from  gst.gestion_gastos.transaccion import Transaccion
+from .transaccion import Transaccion
 
 class Usuario:
     def __init__(self, nombre: str):
@@ -17,6 +17,7 @@ class Usuario:
 
     def obtener_balance(self) -> float:
         return sum(t.get_monto() for t in self.__transacciones)
+    
 
     def obtener_transacciones(self):
         return self.__transacciones

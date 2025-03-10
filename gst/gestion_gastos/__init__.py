@@ -1,1 +1,0 @@
-CATEGORIAS_GASTOS = []
