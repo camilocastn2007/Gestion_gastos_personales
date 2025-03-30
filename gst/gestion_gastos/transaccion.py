@@ -12,17 +12,21 @@ class Transaccion:
         self.__tipo = tipo
         self.__fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    def get_monto(self) -> float:
+    @property
+    def monto(self) -> float:
         return self.__monto if self.__tipo == "Ingreso" else -self.__monto
 
-    def get_categoria(self) -> str:
+    @property
+    def categoria(self) -> str:
         return self.__categoria
 
-    def get_tipo(self) -> str:
+    @property
+    def tipo(self) -> str:
         return self.__tipo
 
-    def get_fecha(self) -> str:
+    @property
+    def fecha(self) -> str:
         return self.__fecha
 
     def __str__(self):
-        return f"[{self.__fecha}] {self.__tipo}: ${self.__monto} - {self.__categoria}"
+        return f"[{self.fecha}] {self.tipo}: ${self.monto} - {self.categoria}"

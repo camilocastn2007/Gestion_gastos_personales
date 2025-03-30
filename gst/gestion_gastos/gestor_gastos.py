@@ -2,13 +2,31 @@ from .usuario import Usuario
 from .categoria import Categoria
 
 class GestorGastos:
+    """
+        Representa el gestor de gastos de las transacciones.
+
+    """
     def __init__(self):
+        """
+        inicializa una instancia del gestor de gastos.
+
+        Args:
+            usuarios(dict): Los usuarios.
+            categorias(list): las categorias de los usuarios.
+        """
+
+
         self.__usuarios = {}
         self.__categorias = []
 
     def registrar_usuario(self, nombre: str):
+        """
+        Agrega un nuevo usuario|
+        
+        """
         if nombre not in self.__usuarios:
             self.__usuarios[nombre] = Usuario(nombre)
+        
 
     def obtener_usuarios(self):
         return list(self.__usuarios.keys())
